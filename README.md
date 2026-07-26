@@ -49,7 +49,6 @@ A Tampermonkey userscript that adds an **"On Channel"** button to every YouTube 
 1. Open any YouTube video (e.g. `youtube.com/watch?v=...`)
 2. Find the **"On Channel"** button in the row of buttons under the video title
 
-   ![Button location — next to Like, Dislike, Share](https://i.imgur.com/placeholder.png)
    > The button appears to the right of the Share button
 
 3. Click **"On Channel"**
