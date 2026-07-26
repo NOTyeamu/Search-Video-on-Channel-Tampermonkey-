@@ -60,54 +60,6 @@ A Tampermonkey userscript that adds an **"On Channel"** button to every YouTube 
 
 ---
 
-## ⚙️ How it works
-
-```
-Click "On Channel"
-       │
-       ▼
-Opens channel /videos tab
-       │
-       ├─── Track A (API) ──────────────────────────────────────────────────────►
-       │     Fetches channel page → extracts ytInitialData                        │
-       │     Sends parallel continuation requests to /youtubei/v1/browse           │
-       │     Finds video ID → returns position index                               │
-       │                                                                           │
-       ├─── Track B (DOM) ─────────────────────────────────────────────────────► │
-       │     Scrolls to page bottom instantly                                      │
-       │     Waits for new cards via MutationObserver                              │
-       │     Repeats until enough cards are loaded                                 │
-       │                                                                    ◄──────┘
-       ▼
-Card found in DOM → scroll into view → highlight → fade overlay
-```
-
-Both tracks run **in parallel** — as soon as the API resolves the video's index, the DOM track already has most cards loaded. This eliminates the wait you'd otherwise have between "search done" and "cards loaded".
-
----
-
-## 🔒 Permissions used
-
-| Permission | Purpose |
-|---|---|
-| `GM_setValue` / `GM_getValue` | Passes the video ID + channel handle from the watch tab to the channel tab |
-| `GM_xmlhttpRequest` | Fetches the channel page and YouTube's internal API (bypasses CORS) |
-| `@connect www.youtube.com` | Allows the above requests to YouTube's domain |
-
-The script never sends data anywhere outside of `youtube.com`.
-
----
-
-## 🛠️ Changelog
-
-| Version | Changes |
-|---|---|
-| **12.0** | Parallel search + scroll (Track A / Track B); spinner has no status text, only shows on error |
-| **11.0** | Blur overlay blocks all clicks; only highlighted card is clickable; English UI; faster polling |
-| **10.2** | Initial public version — sequential API scan, blur overlay, highlight animation |
-
----
-
 ## 📄 License
 
 MIT — do whatever you want with it.
