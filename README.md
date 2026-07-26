@@ -30,7 +30,7 @@ A Tampermonkey userscript that adds an **"On Channel"** button to every YouTube 
 
 ### Option 1 — Copy the raw script
 
-1. Open the file [`YouTube_GoToChannel_v12.user.js`](./YouTube_GoToChannel_v12.user.js)
+1. Open the file [`YouTube_GoToChannel_v12.user.js`](./YouTube_GoToChannel.user.js)
 2. Click **Raw** (top-right of the file view)
 3. Tampermonkey will detect it automatically and show an install prompt
 4. Click **Install**
@@ -39,7 +39,7 @@ A Tampermonkey userscript that adds an **"On Channel"** button to every YouTube 
 
 1. Open Tampermonkey → **Dashboard** → **+** (Create new script)
 2. Delete the default template content
-3. Copy the full contents of [`YouTube_GoToChannel_v12.user.js`](./YouTube_GoToChannel_v12.user.js) and paste it in
+3. Copy the full contents of [`YouTube_GoToChannel_v12.user.js`](./YouTube_GoToChannel.user.js) and paste it in
 4. Press **Ctrl + S** to save
 
 ---
